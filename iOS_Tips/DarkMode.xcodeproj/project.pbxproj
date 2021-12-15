@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2AD6F4D12765E0420057AF31 /* ZLUrlAssetTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6F4D02765E0420057AF31 /* ZLUrlAssetTestVC.m */; };
+		2AD6F4D5276641A90057AF31 /* ZLScroolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6F4D4276641A90057AF31 /* ZLScroolView.m */; };
+		2AD6F4D9276A30700057AF31 /* WeakScriptMessageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6F4D8276A30700057AF31 /* WeakScriptMessageDelegate.swift */; };
 		2C5F11A7257BCB7000904B70 /* YYAnimatedImageView+iOS14.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F11A6257BCB7000904B70 /* YYAnimatedImageView+iOS14.m */; };
 		2CC813682553CE88009DAC9B /* 已浏览.md in Resources */ = {isa = PBXBuildFile; fileRef = 2CC813672553CE88009DAC9B /* 已浏览.md */; };
 		2CEBE85D24A6E65600BA21F3 /* SLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEBE85B24A6E65600BA21F3 /* SLTimer.m */; };
@@ -218,6 +220,9 @@
 /* Begin PBXFileReference section */
 		2AD6F4CF2765E0420057AF31 /* ZLUrlAssetTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLUrlAssetTestVC.h; sourceTree = "<group>"; };
 		2AD6F4D02765E0420057AF31 /* ZLUrlAssetTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLUrlAssetTestVC.m; sourceTree = "<group>"; };
+		2AD6F4D3276641A90057AF31 /* ZLScroolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLScroolView.h; sourceTree = "<group>"; };
+		2AD6F4D4276641A90057AF31 /* ZLScroolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLScroolView.m; sourceTree = "<group>"; };
+		2AD6F4D8276A30700057AF31 /* WeakScriptMessageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakScriptMessageDelegate.swift; sourceTree = "<group>"; };
 		2C5F11A5257BCB7000904B70 /* YYAnimatedImageView+iOS14.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YYAnimatedImageView+iOS14.h"; sourceTree = "<group>"; };
 		2C5F11A6257BCB7000904B70 /* YYAnimatedImageView+iOS14.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YYAnimatedImageView+iOS14.m"; sourceTree = "<group>"; };
 		2CC813672553CE88009DAC9B /* 已浏览.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "已浏览.md"; sourceTree = "<group>"; };
@@ -598,10 +603,21 @@
 		2AD6F4CE2765E0110057AF31 /* zasTest */ = {
 			isa = PBXGroup;
 			children = (
+				2AD6F4D22766418C0057AF31 /* views */,
 				2AD6F4CF2765E0420057AF31 /* ZLUrlAssetTestVC.h */,
 				2AD6F4D02765E0420057AF31 /* ZLUrlAssetTestVC.m */,
+				2AD6F4D8276A30700057AF31 /* WeakScriptMessageDelegate.swift */,
 			);
 			path = zasTest;
+			sourceTree = "<group>";
+		};
+		2AD6F4D22766418C0057AF31 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6F4D3276641A90057AF31 /* ZLScroolView.h */,
+				2AD6F4D4276641A90057AF31 /* ZLScroolView.m */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		2C09ED9425401113009E96B6 /* 设计模式 */ = {
@@ -1378,6 +1394,7 @@
 				TargetAttributes = {
 					78B1047C232F57C30051579F = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1300;
 					};
 					78B10497232F57C50051579F = {
 						CreatedOnToolsVersion = 11.0;
@@ -1573,6 +1590,7 @@
 				784C4BEA24BDA2DE00D5C199 /* SLProxy.m in Sources */,
 				7857FD4B24729E8500D3D986 /* BSBacktraceLogger.m in Sources */,
 				78E72D8224811F6600751373 /* SLWebCacheViewController.m in Sources */,
+				2AD6F4D5276641A90057AF31 /* ZLScroolView.m in Sources */,
 				78E72D8F2483DC2600751373 /* SLWebCacheManager.m in Sources */,
 				787C7DC9245D77D9005DF7ED /* SLZombieSafeFree.m in Sources */,
 				786147FA23630C4D00C5424C /* UIImage+SLCommon.m in Sources */,
@@ -1605,6 +1623,7 @@
 				787C7DC2245D74E4005DF7ED /* NSMutableString+SLCrashProtector.m in Sources */,
 				782E3EB12373D889001E0DF9 /* SLAvCaptureSession.m in Sources */,
 				789AD1C824D7FA5F00CB0B4C /* SLAPMURLProtocol.m in Sources */,
+				2AD6F4D9276A30700057AF31 /* WeakScriptMessageDelegate.swift in Sources */,
 				78842464248F964000C2E505 /* SLAVListViewController.m in Sources */,
 				78E179362351A40D0007E4BB /* SLEditMenuView.m in Sources */,
 				78BDE04B248A6A74002ED386 /* SLUrlProtocolAddCookie.m in Sources */,
@@ -1828,6 +1847,7 @@
 			baseConfigurationReference = B4CC2A37AE5DCF4056284BE9 /* Pods-DarkMode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L7MQQ9MJWY;
@@ -1848,9 +1868,11 @@
 				NEW_SETTING = "";
 				ORDER_FILE = "$(SRCROOT)/DarkMode/WorkIssues/二进制重排/wsl.order";
 				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zas.wsl2ls.iostip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zas.wslls.iostip;
 				PRODUCT_NAME = SLTips;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1860,6 +1882,7 @@
 			baseConfigurationReference = D002B8CEA71006D5DD02169F /* Pods-DarkMode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L7MQQ9MJWY;
@@ -1880,9 +1903,10 @@
 				NEW_SETTING = "";
 				ORDER_FILE = "$(SRCROOT)/DarkMode/WorkIssues/二进制重排/wsl.order";
 				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zas.wsl2ls.iostip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zas.wslls.iostip;
 				PRODUCT_NAME = SLTips;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1890,6 +1914,7 @@
 		78B104B0232F57C50051579F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DarkModeTests/Info.plist;
@@ -1908,6 +1933,7 @@
 		78B104B1232F57C50051579F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DarkModeTests/Info.plist;
@@ -1926,6 +1952,7 @@
 		78B104B3232F57C50051579F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DarkModeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1943,6 +1970,7 @@
 		78B104B4232F57C50051579F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DarkModeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

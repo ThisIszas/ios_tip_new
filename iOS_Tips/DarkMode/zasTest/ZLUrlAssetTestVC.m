@@ -8,6 +8,7 @@
 
 #import "ZLUrlAssetTestVC.h"
 #import <AVFoundation/AVFoundation.h>
+#import "ZLScroolView.h"
 @interface ZLUrlAssetTestVC ()
 
 @end
@@ -29,6 +30,8 @@
     [player play];
     
     NSLog(@"time duration: %lld %d", item1.duration.value, item1.duration.timescale);
+    ZLScroolView *zoomView = [[ZLScroolView alloc] initWithFrame:CGRectMake(0, 300, 200, 200)];
+    [self.view addSubview: zoomView];
 }
 
 /*

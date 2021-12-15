@@ -219,6 +219,7 @@
 }
 //获取网格区域在图片上的相对位置
 - (CGRect)rectOfGridOnImageByGridRect:(CGRect)cropRect {
+//    NSLog(@"%@ %@", NSStringFromCGRect(cropRect), NSStringFromCGRect(self.zoomView.imageView.frame));
     CGRect rect = [self.view convertRect:cropRect toView:self.zoomView.imageView];
     return rect;
 }
