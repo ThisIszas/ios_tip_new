@@ -175,6 +175,7 @@
 - (void)handlePan:(UIPanGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         CGPoint translationInView = [gestureRecognizer translationInView:self.superview];
+//        NSLog(@"start translation: %@", NSStringFromCGPoint(translationInView));
         self.startPoint = CGPointMake(roundf(translationInView.x), translationInView.y);
         if ([self.delegate respondsToSelector:@selector(resizeConrolDidBeginResizing:)]) {
             [self.delegate resizeConrolDidBeginResizing:self];
@@ -183,7 +184,7 @@
         CGPoint translation = [gestureRecognizer translationInView:self.superview];
         self.translation = CGPointMake(roundf(self.startPoint.x + translation.x),
                                        roundf(self.startPoint.y + translation.y));
-        
+//        NSLog(@"moving translation: %@ %@", NSStringFromCGPoint(translation), NSStringFromCGPoint(self.translation));
         if ([self.delegate respondsToSelector:@selector(resizeConrolDidResizing:)]) {
             [self.delegate resizeConrolDidResizing:self];
         }
@@ -233,6 +234,7 @@ const CGFloat kSLControlWidth = 30.f;
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     UIView *view = [super hitTest:point withEvent:event];
     if (self == view) {
+        ///  如果是self, 说明没点在SLResizeControl上面
         return nil;
     }
     [self enableCornerViewUserInteraction:view];
@@ -330,11 +332,11 @@ const CGFloat kSLControlWidth = 30.f;
 //}
 // 更新网格区域和遮罩状态
 - (void)setGridRect:(CGRect)gridRect maskLayer:(BOOL)isMaskLayer  animated:(BOOL)animated {
-    if (!CGRectEqualToRect(_gridRect, gridRect)) {
-        _gridRect = gridRect;
-        [self setNeedsLayout];
-        [self.gridLayer setGridRect:gridRect animated:animated];
-        if (isMaskLayer) {
+    if (!CGRectEqualToRect(_gridRect, gridRect)) { /// 避免self.gridRect的set方法被重复触发, 导致无限递归
+        _gridRect = gridRect;   /// 会被 resize control的delegate方法频繁触发, 用以更新gridView
+        [self setNeedsLayout];  /// 会异步更新 resizeCtrls的frame
+        [self.gridLayer setGridRect:gridRect animated:animated];  /// 设置线条区域
+        if (isMaskLayer) {  ///设置半透明遮罩区域
             [self.gridMaskLayer setMaskRect:gridRect animated:YES];
         }
     }
@@ -353,7 +355,7 @@ const CGFloat kSLControlWidth = 30.f;
     self.rightEdgeView.frame = (CGRect){CGRectGetMaxX(rect) - CGRectGetWidth(self.rightEdgeView.bounds) / 2, CGRectGetMaxY(self.topRightCornerView.frame), CGRectGetWidth(self.rightEdgeView.bounds), CGRectGetMinY(self.bottomRightCornerView.frame) - CGRectGetMaxY(self.topRightCornerView.frame)};
 }
 
-//返回正在调整网格大小时的网格区域
+//返回正在调整网格大小时的网格区域,  按照resizeCtrl的translation, 以及self的bounds, 算出遮罩区域新的frame
 - (CGRect)cropRectMakeWithResizeControlView:(SLResizeControl *)resizeControlView {
     CGRect rect = self.gridRect;
     if (resizeControlView == self.topEdgeView) {
