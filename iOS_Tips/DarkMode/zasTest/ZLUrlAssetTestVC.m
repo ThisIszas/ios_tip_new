@@ -8,6 +8,20 @@
 
 #import "ZLUrlAssetTestVC.h"
 #import <AVFoundation/AVFoundation.h>
+#import <objc/runtime.h>
+
+@interface testRuntimeClass : NSObject
+- (void)testUnknown;
+@end
+
+@implementation testRuntimeClass
+- (void)testUnknown{
+    NSLog(@"%s", "123");
+}
+
+@end
+
+
 @interface ZLUrlAssetTestVC ()
 
 @end
@@ -29,6 +43,9 @@
     [player play];
     
     NSLog(@"time duration: %lld %d", item1.duration.value, item1.duration.timescale);
+    
+    SEL unknownSel = NSSelectorFromString(@"testUnknown");
+    [self performSelector:unknownSel];
 }
 
 /*
@@ -40,5 +57,41 @@
     // Pass the selected object to the new view controller.
 }
 */
+
++ (BOOL)resolveInstanceMethod:(SEL)sel{
+    NSString *selName = NSStringFromSelector(sel);
+    if([selName isEqualToString: @"testUnknown"]){
+        return true;
+    }
+    return [super resolveInstanceMethod:sel];;
+}
+
+- (id)forwardingTargetForSelector:(SEL)aSelector{
+    NSString *selName = NSStringFromSelector(aSelector);
+    if([selName isEqualToString: @"testUnknown"]){
+        return nil;
+    }
+    return [super forwardingTargetForSelector:aSelector];
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector{
+    NSString *selName = NSStringFromSelector(aSelector);
+    if([selName isEqualToString: @"testUnknown"]){
+        return [NSMethodSignature signatureWithObjCTypes:"v@:"];;
+    }
+    return [super methodSignatureForSelector:aSelector];
+}
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation{
+    SEL selector = anInvocation.selector;
+    testRuntimeClass *testClass1 = [testRuntimeClass new];
+    
+    if([testClass1 respondsToSelector:selector]){
+        [anInvocation invokeWithTarget:testClass1];
+    }
+    else{
+        [anInvocation doesNotRecognizeSelector:selector];
+    }
+}
 
 @end

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2AD6F4D12765E0420057AF31 /* ZLUrlAssetTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6F4D02765E0420057AF31 /* ZLUrlAssetTestVC.m */; };
+		2AE62E7B277B4BA800C161F4 /* ZLWKWebViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE62E79277B4BA800C161F4 /* ZLWKWebViewTools.swift */; };
+		2AE62E7C277B4BA800C161F4 /* ZLWebViewKeyboardTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE62E7A277B4BA800C161F4 /* ZLWebViewKeyboardTool.m */; };
 		2C5F11A7257BCB7000904B70 /* YYAnimatedImageView+iOS14.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F11A6257BCB7000904B70 /* YYAnimatedImageView+iOS14.m */; };
 		2CC813682553CE88009DAC9B /* 已浏览.md in Resources */ = {isa = PBXBuildFile; fileRef = 2CC813672553CE88009DAC9B /* 已浏览.md */; };
 		2CEBE85D24A6E65600BA21F3 /* SLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEBE85B24A6E65600BA21F3 /* SLTimer.m */; };
@@ -218,6 +220,9 @@
 /* Begin PBXFileReference section */
 		2AD6F4CF2765E0420057AF31 /* ZLUrlAssetTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLUrlAssetTestVC.h; sourceTree = "<group>"; };
 		2AD6F4D02765E0420057AF31 /* ZLUrlAssetTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLUrlAssetTestVC.m; sourceTree = "<group>"; };
+		2AE62E78277B4BA800C161F4 /* ZLWebViewKeyboardTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLWebViewKeyboardTool.h; sourceTree = "<group>"; };
+		2AE62E79277B4BA800C161F4 /* ZLWKWebViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLWKWebViewTools.swift; sourceTree = "<group>"; };
+		2AE62E7A277B4BA800C161F4 /* ZLWebViewKeyboardTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLWebViewKeyboardTool.m; sourceTree = "<group>"; };
 		2C5F11A5257BCB7000904B70 /* YYAnimatedImageView+iOS14.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YYAnimatedImageView+iOS14.h"; sourceTree = "<group>"; };
 		2C5F11A6257BCB7000904B70 /* YYAnimatedImageView+iOS14.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YYAnimatedImageView+iOS14.m"; sourceTree = "<group>"; };
 		2CC813672553CE88009DAC9B /* 已浏览.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "已浏览.md"; sourceTree = "<group>"; };
@@ -598,6 +603,9 @@
 		2AD6F4CE2765E0110057AF31 /* zasTest */ = {
 			isa = PBXGroup;
 			children = (
+				2AE62E78277B4BA800C161F4 /* ZLWebViewKeyboardTool.h */,
+				2AE62E7A277B4BA800C161F4 /* ZLWebViewKeyboardTool.m */,
+				2AE62E79277B4BA800C161F4 /* ZLWKWebViewTools.swift */,
 				2AD6F4CF2765E0420057AF31 /* ZLUrlAssetTestVC.h */,
 				2AD6F4D02765E0420057AF31 /* ZLUrlAssetTestVC.m */,
 			);
@@ -1378,6 +1386,7 @@
 				TargetAttributes = {
 					78B1047C232F57C30051579F = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1300;
 					};
 					78B10497232F57C50051579F = {
 						CreatedOnToolsVersion = 11.0;
@@ -1593,6 +1602,7 @@
 				78E72D70247E536400751373 /* SLWebTableViewController3.m in Sources */,
 				78E72D8C2482958300751373 /* WKWebView+SLExtension.m in Sources */,
 				7884247F2492102900C2E505 /* SLWorkIssuesViewController.m in Sources */,
+				2AE62E7C277B4BA800C161F4 /* ZLWebViewKeyboardTool.m in Sources */,
 				78E72D542477A4E700751373 /* SLWebTableViewController.m in Sources */,
 				2AD6F4D12765E0420057AF31 /* ZLUrlAssetTestVC.m in Sources */,
 				2CEBE85D24A6E65600BA21F3 /* SLTimer.m in Sources */,
@@ -1646,6 +1656,7 @@
 				78777CE6238FF65C006FA671 /* SLDelayPerform.m in Sources */,
 				787C7DD22462C5F3005DF7ED /* UIViewController+SLMLeakFinder.m in Sources */,
 				788ADB382441F48F00302CD9 /* SLCrashViewController.m in Sources */,
+				2AE62E7B277B4BA800C161F4 /* ZLWKWebViewTools.swift in Sources */,
 				78DAA1162360256200A60F64 /* SLEditSelectedBox.m in Sources */,
 				78799EAB24EFC60C00DA8C7A /* SLResourceInfo.m in Sources */,
 				787C7DCC2462ADE5005DF7ED /* NSObject+SLMLeakFinder.m in Sources */,
@@ -1828,6 +1839,7 @@
 			baseConfigurationReference = B4CC2A37AE5DCF4056284BE9 /* Pods-DarkMode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L7MQQ9MJWY;
@@ -1851,6 +1863,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zas.wsl2ls.iostip;
 				PRODUCT_NAME = SLTips;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1860,6 +1874,7 @@
 			baseConfigurationReference = D002B8CEA71006D5DD02169F /* Pods-DarkMode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L7MQQ9MJWY;
@@ -1883,6 +1898,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zas.wsl2ls.iostip;
 				PRODUCT_NAME = SLTips;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1890,6 +1906,7 @@
 		78B104B0232F57C50051579F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DarkModeTests/Info.plist;
@@ -1908,6 +1925,7 @@
 		78B104B1232F57C50051579F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DarkModeTests/Info.plist;
@@ -1926,6 +1944,7 @@
 		78B104B3232F57C50051579F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DarkModeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1943,6 +1962,7 @@
 		78B104B4232F57C50051579F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DarkModeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
