@@ -10,6 +10,7 @@
 		2AD6F4D12765E0420057AF31 /* ZLUrlAssetTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6F4D02765E0420057AF31 /* ZLUrlAssetTestVC.m */; };
 		2AE62E7B277B4BA800C161F4 /* ZLWKWebViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE62E79277B4BA800C161F4 /* ZLWKWebViewTools.swift */; };
 		2AE62E7C277B4BA800C161F4 /* ZLWebViewKeyboardTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE62E7A277B4BA800C161F4 /* ZLWebViewKeyboardTool.m */; };
+		2AFC71BF2794492B007E630F /* ZLImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC71BE2794492B007E630F /* ZLImageUtils.swift */; };
 		2C5F11A7257BCB7000904B70 /* YYAnimatedImageView+iOS14.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5F11A6257BCB7000904B70 /* YYAnimatedImageView+iOS14.m */; };
 		2CC813682553CE88009DAC9B /* 已浏览.md in Resources */ = {isa = PBXBuildFile; fileRef = 2CC813672553CE88009DAC9B /* 已浏览.md */; };
 		2CEBE85D24A6E65600BA21F3 /* SLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEBE85B24A6E65600BA21F3 /* SLTimer.m */; };
@@ -223,6 +224,7 @@
 		2AE62E78277B4BA800C161F4 /* ZLWebViewKeyboardTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLWebViewKeyboardTool.h; sourceTree = "<group>"; };
 		2AE62E79277B4BA800C161F4 /* ZLWKWebViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLWKWebViewTools.swift; sourceTree = "<group>"; };
 		2AE62E7A277B4BA800C161F4 /* ZLWebViewKeyboardTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLWebViewKeyboardTool.m; sourceTree = "<group>"; };
+		2AFC71BE2794492B007E630F /* ZLImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLImageUtils.swift; sourceTree = "<group>"; };
 		2C5F11A5257BCB7000904B70 /* YYAnimatedImageView+iOS14.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YYAnimatedImageView+iOS14.h"; sourceTree = "<group>"; };
 		2C5F11A6257BCB7000904B70 /* YYAnimatedImageView+iOS14.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YYAnimatedImageView+iOS14.m"; sourceTree = "<group>"; };
 		2CC813672553CE88009DAC9B /* 已浏览.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "已浏览.md"; sourceTree = "<group>"; };
@@ -608,6 +610,7 @@
 				2AE62E79277B4BA800C161F4 /* ZLWKWebViewTools.swift */,
 				2AD6F4CF2765E0420057AF31 /* ZLUrlAssetTestVC.h */,
 				2AD6F4D02765E0420057AF31 /* ZLUrlAssetTestVC.m */,
+				2AFC71BE2794492B007E630F /* ZLImageUtils.swift */,
 			);
 			path = zasTest;
 			sourceTree = "<group>";
@@ -1613,6 +1616,7 @@
 				789AD1CF24D9024300CB0B4C /* Reachability.m in Sources */,
 				7862533F24599D420017F8F1 /* NSObject+SLCrashProtector.m in Sources */,
 				787C7DC2245D74E4005DF7ED /* NSMutableString+SLCrashProtector.m in Sources */,
+				2AFC71BF2794492B007E630F /* ZLImageUtils.swift in Sources */,
 				782E3EB12373D889001E0DF9 /* SLAvCaptureSession.m in Sources */,
 				789AD1C824D7FA5F00CB0B4C /* SLAPMURLProtocol.m in Sources */,
 				78842464248F964000C2E505 /* SLAVListViewController.m in Sources */,
