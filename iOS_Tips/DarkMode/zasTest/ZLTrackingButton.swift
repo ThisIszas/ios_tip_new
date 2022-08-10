@@ -39,7 +39,7 @@ class ZLTrackingButton: UIButton {
         if let eventCategory = self.eventTrackCategory, let eventParam = self.eventTrackParams{
             if let target = target {
                 /// RxSwift触发的情况
-                let eventTypeInt = ZLRuntimeOCHelper.getValueForClass(target, className: "RxCocoa.ControlTarget", keyName: "controlEvents")
+                let eventTypeInt = ZLRuntimeOCHelper.getPrivateIntValueForClass(target, className: "RxCocoa.ControlTarget", keyName: "controlEvents")
                 
                 if eventTypeInt != -100, UIControl.Event.init(rawValue: UInt(eventTypeInt)) == .touchDown{
                     print("上传 eventCategory: \(eventCategory)")
